@@ -11,6 +11,16 @@
 &mt { flavor = "tap-preferred"; };
 
 / {
+    macros {
+        mac_snap: mac_snap {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(LC(NUMBER_4)))>;
+            label = "MAC_SNAP";
+            tap-ms = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
