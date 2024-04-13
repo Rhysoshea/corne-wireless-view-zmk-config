@@ -10,6 +10,9 @@
 
 &mt { flavor = "tap-preferred"; };
 
+&soft_off {
+};
+
 / {
     macros {
         mac_snap: mac_snap {
