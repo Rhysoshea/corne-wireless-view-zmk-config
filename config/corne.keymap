@@ -38,7 +38,7 @@
 &mt EQUAL GRAVE  &mt ESC Q    &kp W  &kp E  &kp R     &kp T      &kp Y      &kp U     &kp I           &mt LBRC O                &mt RBRC P      &mt BSLH MINUS
 &mt CAPS TAB     &kp A        &kp S  &kp D  &kp F     &kp G      &kp H      &kp J     &mt LPAR K      &mt RPAR L                &kp SEMI        &kp SQT
 &kp LSHFT        &mt LCTRL Z  &kp X  &kp C  &kp V     &kp B      &kp N      &kp M     &mt LBKT COMMA  &mt RIGHT_BRACKET PERIOD  &mt RCTRL FSLH  &kp RSHFT
-                                     &mo 1  &kp LGUI  &kp RET    &kp SPACE  &kp BSPC  &soft_off
+                                     &mo 1  &kp LGUI  &kp RET    &kp SPACE  &kp BSPC  &mo 2
             >;
         };
 
