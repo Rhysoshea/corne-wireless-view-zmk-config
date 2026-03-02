@@ -13,86 +13,85 @@
 &soft_off { hold-time-ms = <2000>; };
 
 / {
-macros {
-mac_snap: mac_snap {
-compatible = "zmk,behavior-macro";
-#binding-cells = <0>;
-bindings = <&kp LG(LS(LC(NUMBER_4)))>;
-label = "MAC_SNAP";
-tap-ms = <0>;
-};
-};
+    macros {
+        mac_snap: mac_snap {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(LC(NUMBER_4)))>;
+            label = "MAC_SNAP";
+            tap-ms = <0>;
+        };
+    };
 
-keymap {
-compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-Mac {
-// -----------------------------------------------------------------------------------------
-// | GRAVE  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | - |
-// | TAB    |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT  |
-//                      | LWR | GUI | ENT |   | SPC | BSPC | RSE |
+        Mac {
+            // -----------------------------------------------------------------------------------------
+            // | GRAVE  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | - |
+            // | TAB    |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+            // | SHFT   |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT  |
+            //                      | LWR | GUI | ENT |   | SPC | BSPC | RSE |
 
-label = "MAC";
-bindings = <
+            label = "MAC";
+            bindings = <
 &mt EQUAL GRAVE  &mt ESC Q    &kp W  &kp E  &kp R     &kp T      &kp Y      &kp U     &kp I           &mt LBRC O                &mt RBRC P      &mt BSLH MINUS
 &mt CAPS TAB     &kp A        &kp S  &kp D  &kp F     &kp G      &kp H      &kp J     &mt LPAR K      &mt RPAR L                &kp SEMI        &kp SQT
 &kp LSHFT        &mt LCTRL Z  &kp X  &kp C  &kp V     &kp B      &kp N      &kp M     &mt LBKT COMMA  &mt RIGHT_BRACKET PERIOD  &mt RCTRL FSLH  &kp RSHFT
-&mo 2  &kp LGUI  &kp RET    &kp SPACE  &kp BSPC  &mo 4
->;
-};
+                                     &mo 2  &kp LGUI  &kp RET    &kp SPACE  &kp BSPC  &mo 4
+            >;
+        };
 
-Windows {
-label = "WIN";
-bindings = <
+        Windows {
+            label = "WIN";
+            bindings = <
 &mt EQUAL GRAVE  &mt ESC Q       &kp W  &kp E  &kp R      &kp T      &kp Y      &kp U     &kp I           &mt LBRC O                &mt RBRC P      &mt BSLH MINUS
 &mt CAPS TAB     &kp A           &kp S  &kp D  &kp F      &kp G      &kp H      &kp J     &mt LPAR K      &mt RPAR L                &kp SEMI        &kp SQT
 &kp LSHFT        &mt LEFT_WIN Z  &kp X  &kp C  &kp V      &kp B      &kp N      &kp M     &mt LBKT COMMA  &mt RIGHT_BRACKET PERIOD  &mt RCTRL FSLH  &kp RSHFT
-&mo 2  &kp LCTRL  &kp RET    &kp SPACE  &kp BSPC  &mo 4
->;
-};
+                                        &mo 2  &kp LCTRL  &kp RET    &kp SPACE  &kp BSPC  &mo 4
+            >;
+        };
 
-lower_mac {
-// -----------------------------------------------------------------------------------------
-// | EQUAL|     |     |     |     |     |   |     |  7  |  8  |  9  |     |  \   |
-// | CAPS | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |  4  |  5  |  6  |     |      |
-// | SHFT |     |     |     |     |     |   |  0  |  1  |  2  |  3  |     |      |
-//                    |     | GUI | ENT |   | SPC | DEL |     |
+        lower_mac {
+            // -----------------------------------------------------------------------------------------
+            // | EQUAL|     |     |     |     |     |   |     |  7  |  8  |  9  |     |  \   |
+            // | CAPS | BT1 | BT2 | BT3 | BT4 | BT5 |   |     |  4  |  5  |  6  |     |      |
+            // | SHFT |     |     |     |     |     |   |  0  |  1  |  2  |  3  |     |      |
+            //                    |     | GUI | ENT |   | SPC | DEL |     |
 
-label = "Lower";
-bindings = <
+            label = "Lower";
+            bindings = <
 &kp EQUAL  &trans        &trans          &kp UP_ARROW              &trans           &kp PG_UP    &trans     &kp N7   &kp N8  &kp N9  &trans         &kp BSLH
 &kp CAPS   &trans        &kp LEFT_ARROW  &kp DOWN_ARROW            &kp RIGHT_ARROW  &kp PG_DN    &trans     &kp N4   &kp N5  &kp N6  &trans         &trans
 &kp LSHFT  &kp LEFT_ALT  &trans          &kp LS(LC(LG(NUMBER_4)))  &trans           &trans       &kp N0     &kp N1   &kp N2  &kp N3  &kp RIGHT_ALT  &trans
-&trans                    &kp LGUI         &kp RET      &kp SPACE  &kp DEL  &trans
->;
-};
+                                         &trans                    &kp LGUI         &kp RET      &kp SPACE  &kp DEL  &trans
+            >;
+        };
 
-lower_win {
-label = "Lower_win";
-bindings = <
+        lower_win {
+            label = "Lower_win";
+            bindings = <
 &kp EQUAL  &trans        &trans          &kp UP_ARROW     &trans           &kp PG_UP    &trans     &kp N7   &kp N8  &kp N9  &trans         &kp BSLH
 &kp CAPS   &trans        &kp LEFT_ARROW  &kp DOWN_ARROW   &kp RIGHT_ARROW  &kp PG_DN    &trans     &kp N4   &kp N5  &kp N6  &trans         &trans
 &kp LSHFT  &kp LEFT_ALT  &trans          &kp PRINTSCREEN  &trans           &trans       &kp N0     &kp N1   &kp N2  &kp N3  &kp RIGHT_ALT  &trans
                                          &trans           &kp LGUI         &kp RET      &kp SPACE  &kp DEL  &trans
-                                         &trans           &kp LCTRL        &kp RET      &kp SPACE  &kp DEL  &trans
->;
-};
+            >;
+        };
 
-raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  F7  |  F8  |  F9  |  F10  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  F4  |  F5  |  F6  |  F11  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  F1  |  F2  |  F3  |  F12  |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+        raise_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  F7  |  F8  |  F9  |  F10  | BKSP |
+            // | CTRL |     |     |     |     |     |   |  -  |  F4  |  F5  |  F6  |  F11  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  F1  |  F2  |  F3  |  F12  |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-label = "Raise";
-bindings = <
+            label = "Raise";
+            bindings = <
 &soft_off  &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT       &kp F12      &kp F7     &kp F8  &kp F9  &kp C_FAST_FORWARD  &kp C_VOLUME_UP
 &kp LCTRL  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F11      &kp F4     &kp F5  &kp F6  &kp C_PLAY_PAUSE    &kp C_VOL_DN
-&kp LSHFT  &bt BT_CLR    &sl 0         &sl 1         &trans        &trans          &kp F10      &kp F1     &kp F2  &kp F3  &kp C_REWIND        &kp K_MUTE
-&none         &soft_off     &bootloader     &bootloader  &soft_off  &trans
->;
-};
-};
+&kp LSHFT  &bt BT_CLR    &tog 0        &tog 1        &trans        &trans          &kp F10      &kp F1     &kp F2  &kp F3  &kp C_REWIND        &kp K_MUTE
+                                       &none         &soft_off     &bootloader     &bootloader  &soft_off  &trans
+            >;
+        };
+    };
 };
